@@ -12,7 +12,7 @@ using var channel = connection.CreateModel();
 channel.QueueDeclare("lego_finisher_queue", true, false, false, null);
 channel.QueueDeclare("lego_finisher_response", true, false, false, null);
 
-bool shouldFail = true; // Set to false to simulate success
+bool shouldFail = false; // Set to false to simulate success
 
 var consumer = new EventingBasicConsumer(channel);
 consumer.Received += (model, ea) =>
